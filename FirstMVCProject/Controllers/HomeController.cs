@@ -13,11 +13,12 @@ namespace FirstMVCProject.Controllers
         {
             return Redirect("https://www.bang-olufsen.com/en/us");
         }
-
+/*
         public ActionResult FirstAction()
         {
             return View();
         }
+*/
         public ActionResult GoToProduct()
         {
             return RedirectToAction("AddProduct", "Product");

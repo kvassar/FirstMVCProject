@@ -11,7 +11,12 @@ namespace FirstMVCProject.Views
         // GET: Employee
         public ActionResult Index()
         {
-            return View();
+            Employee employee = new Employee();
+            employee.ID = 1;
+            employee.Name = "Charles";
+            employee.Salary = 5000;
+            return View(employee);
+           
         }
         public ActionResult AddEmployee()
         {
