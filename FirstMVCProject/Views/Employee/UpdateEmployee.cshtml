@@ -5,5 +5,8 @@
 }
 
 <h2>UpdateEmployee</h2>
+@using (Html.BeginForm("updateEmployee", "employee", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.Partial("~/Views/Employee/Partial/EmployeeForm.cshtml")
 
-@Html.Partial("~/Views/Employee/Partial/EmployeeForm.cshtml")
+}

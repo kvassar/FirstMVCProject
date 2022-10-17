@@ -1,8 +1,12 @@
-﻿
+﻿@model FirstMVCProject.Models.Employee
+
+<label>ID</label>
+@Html.TextBoxFor(x=>x.ID)
+<br />
 <label>Name</label>
-<input type="text"/>
+@Html.TextBoxFor(x=>x.Name)
 <br />
 <label>Salary</label>
-<input type="text"/>
+@Html.TextBoxFor(x=>x.Salary)  
 <br />
 <button type="submit">Save</button>

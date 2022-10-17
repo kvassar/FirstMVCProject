@@ -11,7 +11,7 @@ namespace FirstMVCProject.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return Redirect("https://www.bang-olufsen.com/en/us");
+            return Redirect("https://www.bang-olufsen.com/en/us?");
         }
 /*
         public ActionResult FirstAction()

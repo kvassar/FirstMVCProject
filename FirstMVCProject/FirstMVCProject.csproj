@@ -118,6 +118,7 @@
     <Content Include="Views\Employee\UpdateEmployee.cshtml" />
     <Content Include="Views\Employee\AddEmployee.cshtml" />
     <Content Include="Views\Employee\Partial\EmployeeForm.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
