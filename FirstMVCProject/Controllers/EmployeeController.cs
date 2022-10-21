@@ -23,10 +23,16 @@ namespace FirstMVCProject.Views
             emp2.Name = "Bernard";
             emp2.Salary = 4000;
             employeeList.Add(emp2);
+            
+            ViewData["Age"] = 20;
+            ViewBag.job = "Engineer";
+            string company2 = "OAK";
+            TempData["company"] = company2;
+            
             return View(employeeList);
            
         }
-        public JsonResult GetDateWithJHson()
+        public JsonResult GetDateWithJson()
         {
             string JsonDate = DateTime.Today.ToShortDateString();
             return Json(JsonDate);
@@ -39,13 +45,23 @@ namespace FirstMVCProject.Views
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
-            return View();
+            string textvalue = "";
+            if (ModelState.IsValid)
+            {
+                textvalue = "Model state is valid";
+            }
+            else
+            {
+                textvalue = "Model state is not valid";
+            }
+            return View(employee);
         }
         public ActionResult UpdateEmployee()
         {
             Employee employee = new Employee();
             employee.ID = 1;
-            employee.Name = "Charels";
+            employee.Name = "Charles";
+            string company = (string)TempData["company"];
             employee.Salary = 7000;
             return View(employee);
         }

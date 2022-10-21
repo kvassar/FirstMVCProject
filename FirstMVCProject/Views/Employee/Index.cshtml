@@ -3,12 +3,27 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/EmployeeLayout.cshtml";
 }
-@model List<FirstMVCProject.Models.Employee> 
+@model List<FirstMVCProject.Models.Employee>
 <h2>Index</h2>
 <span id="Date"></span>
-<input id"GetDateWithJson" type="submit" value="Get Date"
+<input id="GetDateWithJson" type="submit" value="Get Date" />
+<br />
+<input type="submit" value="Goto Update Employee" onclick="window.location.href='UpdateEmployee'" />
+<br />
+<p>
+    Age = @ViewData["Age"]
+</p>
+<br />
+<p>
+    Job = @ViewBag.job
+</p>
+<br />
+<a href="@Url.RouteUrl("Catagory",new { @Title="programming"})"><strong>Catagory</strong></a>
+<br />
+<a href="@Url.RouteUrl("Detail",new { @Title="programming",@DetailName="python-programming"})"><strong>Detail Page</strong></a>
+
 <table>
-    <tr> 
+    <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Salary</th>
@@ -23,5 +38,20 @@
     }
 </table>
 
-<script src="~/Content/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
+<script>
+    $(function () {
+        $("#GetDateWithJson").click(
+            function () {
+                $.ajax({
+                    url: "@Url.Action("GetDateWithJson", "Employee")",
+                    type: "POST",
+                    success: function (result) {
+                        $("#Date").html(result);
+                    }
+                });
+            }
+        );
+    });
+</script>
